@@ -1,0 +1,13 @@
+// Creating shared library
+
+rota@rota-VirtualBox:/workdir/vts/workspace/userExp$ gcc -c -Wall -Werror -fpic userExp.c 
+rota@rota-VirtualBox:/workdir/vts/workspace/userExp$ gcc -shared -o libuserExp.so userExp.o
+
+// Compiling Main File
+
+rota@rota-VirtualBox:/workdir/vts/workspace/userExp$ gcc -Wall -o test main.c -luserExp -L.
+
+// Export shared library
+
+rota@rota-VirtualBox:/workdir/vts/workspace/userExp$ export LD_LIBRARY_PATH=/workdir/vts/workspace/userExp/:$LD_LIBRARY_PATH
+
